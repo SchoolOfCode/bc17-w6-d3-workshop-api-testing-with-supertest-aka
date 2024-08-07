@@ -25,19 +25,35 @@ If there are certain parts of the code which you're unsure about, try copy-pasti
 Some questions that might help guide your exploration:
 
 - What endpoints and types of requests does this API support?
+Get, Post , Delete , App.use
+
 - What's the main purpose of the `db/helpers.js` file?
+For create the tables and inserting SQL , exporting data 
+
 - What's the main purpose of each file in the `users` folder?
+user controller file is for the request handlers 
+user model file is for manipulating the data we need , getUserByID 
+user router file is for setting up endpoints and applies diffrent methods like Get 
+
+
 - Where and how are the files in the `users` folder used within the overall API and Express app?
+user controller file are imported in router and the router is imported in app.js 
+user model file file is used to update the SQL database linked to Render in the cloud 
+user router file is for importing controller functions 
+
 - What endpoints/operations does the API support?
+app.js and supports all from user.router.js
+
 - What's the purpose of the `vitest.config.js` file?
+Setting up vitest with the right conditions 
 
 ### 🎫 Ticket 2 - Setup
 
 Familiarising yourself with an existing codebase is an important skill to practise as a developer. Your manager has now tasked you with the following:
 
-- Install the project's existing dependencies (listed in the `package.json`)
+- Install the project's existing dependencies (listed in the `package.json`) - npm install 
   - Why: In this case, the application code uses third party packages, which are listed in the `package.json`. As part of running the tests, the application code will also run (since we'll be testing it) and the application code needs these dependencies to be installed first.
-- Install Vitest and Supertest both as dev dependencies.
+- Install Vitest and Supertest both as dev dependencies. -  npm install -D vitest
   - Why: Vitest and Supertest are third party packages that make it easier to write tests and test HTTP respectively. However, both are only needed during testing and don't need to be included in the final application. Hence, during installation, you can specify that they should be installed as development-only dependencies.
   - If you're stuck, try to search online for any "getting started" guidance or examples in their respective documentation on how to install them as dev dependencies.
 - Set up a PostgreSQL database so that you've got a connection string to connect with. (For simplicity, you can choose to do this using ElephantSQL or similar providers.) Then create a `.env` file at the root of this repository and within it add a line: DATABASE_URL=REPLACE_ME_WITH_YOUR_CONNECTION_STRING
