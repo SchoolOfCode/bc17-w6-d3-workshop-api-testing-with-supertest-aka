@@ -10,7 +10,7 @@ test('GET /api/health works', async () => {
    
   });
     expect(response.status).toEqual(200);
-    expect(response.headers["Content-Type"]).toMatch(/json/)
+    expect(response.headers["content-type"]).toMatch(/json/);
   });
 
 
@@ -19,4 +19,4 @@ test('GET /api/health works', async () => {
 
   // Assertion 2  - response status code of 200 ✅
 
-  // Assertion 3 - content-Type response header contains application/json. 
+  // Assertion 3 - content-Type response header contains application/json. ✅
