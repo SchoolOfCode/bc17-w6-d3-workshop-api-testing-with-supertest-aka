@@ -16,8 +16,13 @@ test('GET /api/health works', async () => {
 
 
   test('GET /api/users', async () => {
-
     await resetUsersTable();
+    const response = await request(app).get('/api/users');
+    expect(response.body).toBe ({
+      success: true,
+      payload: users,
+ 
+});
 
     // const response = await request(app).get('/api/users');
     // expect(response.body).toEqual ({
